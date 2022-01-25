@@ -1,0 +1,29 @@
+su level09
+pass: 25749xKZ8L7DkSCwJkT9dyv6f
+
+На этом левле видим так  же токен и бинарник, пробуем запустить файл без аргумента
+
+./level09 
+You need to provied only one arg.
+
+С аргументом
+./level09 token 
+tpmhr
+
+смотрим что внутри токена
+cat token
+
+В токене содержатся нечитаемые символы. Путем эксперементов с подачей разных аргументов выясняем что перед нами шифратор,
+ который прибавляет сдвиг по индексу, пишем дешифратор, копируем токен на локальный диск
+
+scp -P 4242 level09@localhost:/home/user/level09/token .
+
+./a.out token
+
+f3iji1ju5yuevaus41q1afiuq
+
+su flag09
+
+getflag
+Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
+

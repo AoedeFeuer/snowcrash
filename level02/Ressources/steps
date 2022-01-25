@@ -1,0 +1,34 @@
+su level02
+pass: f2av5il02puano7naaf6adaaf
+
+ls
+> level02.pcap
+
+Файлы с расширением pcap хранят данные сетевого трафика, гуглим какие программы их обрабатывают, в списке есть Wireshark,
+которую рекомендовали в видео к проекту, скачиваем ее на локальный компьютер.
+
+Копируем файл с вм на локальный компьютер
+scp -P 4242 level02@localhost:/home/user/level02/level02.pcap .
+
+В GUI версии:
+>Analyze follow tcp stream
+
+В командной строке:
+tshark -q -r level02.pcap -z follow,tcp,hex,0 > login
+
+-q флаг убирют информацию пакета, -z отображает статистику
+
+-z follow,prot,mode,filter[,range]
+Отображает содержимое потока TCP или UDP между двумя узлами. prot - транспортный протокол. mode - режим вывода. filter - поток, который будет отображаться
+
+ft_wandr...NDRel.L0L
+
+Видим, что во время набора происходило удаление некоторых букв (7f = del), таким образом: 
+
+ft_waNDReL0L
+
+su flag02
+
+getflag
+
+Check flag.Here is your token : kooda2puivaav1idi4f57q8iq

